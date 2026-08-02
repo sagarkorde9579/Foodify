@@ -1,14 +1,19 @@
-    import React, { useEffect, useState } from 'react'
-import { createContext } from 'react'
-import axios from "axios"
-export const StoreContext = createContext(null)
+import React, { useEffect, useState, createContext } from "react";
+import axios from "axios";
+
+export const StoreContext = createContext(null);
+
 export const StoreContextProvider = (props) => {
 
-    const [cartItems, setCartItems] = useState({})
-    const url="http://localhost:4000"
+  const [cartItems, setCartItems] = useState({});
 
-    const [token, setToken] =  useState(() => localStorage.getItem("token") || "")
-    const [food_list,setFoodList]=useState([])
+  const url = import.meta.env.VITE_BACKEND_URL;
+
+  const [token, setToken] = useState(
+    () => localStorage.getItem("token") || ""
+  );
+
+  const [food_list, setFoodList] = useState([]);
     const addToCart = async(itemId) => {
         if (!cartItems[itemId]) {
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }))
