@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 const AppDownload = () => {
   return (
     <div className='app-download' id='app-download'>
-        <p>For Better Experience Download <br />Foodify App</p>
+        <p>For Better Experience Download <br />Foodify Application</p>
         <div className="app-download-platforms">
            <a target='_blank' href=""><img src={assets.play_store} alt="" /></a> 
            <a target='_blank' href="https://play.google.com/store/apps/details?id=com.application.zomato"><img src={assets.app_store} alt="" /></a> 
